@@ -51,7 +51,20 @@ export class LogFormComponent implements OnInit {
       // Update log
       this.logService.updateLog(updLog);
     }
+
+    // Clear state
+    this.clearState();
   }
+    clearState() {
+      this.isNew = true;
+      this.id = '';
+      this.text = '';
+      this.date = '';
+      this.logService.clearState();
+    }
+
+
+
 
   genrateID() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
